@@ -1,4 +1,3 @@
-using LocalRestaurantApp.Domain.Abstractions;
 using LocalRestaurantApp.Domain.Abstractions.Base;
 using LocalRestaurantApp.Domain.Enums;
 

@@ -3,14 +3,14 @@ namespace LocalRestaurantApp.Domain.ValueObjects;
 /// <summary>
 /// Şehir ve ilçeye dayalı lokasyon bilgisi.
 /// </summary>
-public class Location
+public class Address
 {
-    public string City { get; }
-    public string District { get; }
+    public string City { get; set; }
+    public string District { get; set; }
     
-    private Location() { }
+    private Address() { }
 
-    public Location(string city, string district)
+    public Address(string city, string district)
     {
         City = city;
         District = district;
@@ -18,7 +18,7 @@ public class Location
 
     public override bool Equals(object? obj)
     {
-        if (obj is not Location other) return false;
+        if (obj is not Address other) return false;
         return City == other.City && District == other.District;
     }
 

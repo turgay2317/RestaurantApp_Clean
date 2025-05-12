@@ -1,4 +1,3 @@
-using AutoMapper;
 using LocalRestaurantApp.Application.Features.RestaurantFeatures.Commands.CreateRestaurant;
 using LocalRestaurantApp.Application.Services.RestaurantService;
 using LocalRestaurantApp.Domain.Entities;
@@ -20,7 +19,7 @@ public class RestaurantService : IRestaurantService
     {
         Restaurant restaurant = new Restaurant();
         restaurant.Name = createRestaurantRequest.Name;
-        restaurant.Location = new Location(createRestaurantRequest.City, createRestaurantRequest.District);
+        restaurant.Address = new Address(createRestaurantRequest.City, createRestaurantRequest.District);
         await _context.Restaurants.AddAsync(restaurant);
         await _context.SaveChangesAsync();
     }

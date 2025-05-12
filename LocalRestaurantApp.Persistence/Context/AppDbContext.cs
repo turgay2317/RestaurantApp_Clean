@@ -11,6 +11,9 @@ public sealed class AppDbContext : IdentityDbContext<User, Role, string>
 {
     public DbSet<Restaurant> Restaurants { get; set; }
     public DbSet<RestaurantUserRelationship> RestaurantUserRelationships { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderItem> OrderItems { get; set; }
     
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
@@ -22,7 +25,10 @@ public sealed class AppDbContext : IdentityDbContext<User, Role, string>
         base.OnModelCreating(builder);
         
         builder.Entity<Restaurant>()
-            .OwnsOne(c => c.Location);
+            .OwnsOne(c => c.Address);
+        
+        builder.Entity<Customer>()
+            .OwnsOne(c => c.Address);
     }
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {

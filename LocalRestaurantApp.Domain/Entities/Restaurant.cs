@@ -9,5 +9,6 @@ namespace LocalRestaurantApp.Domain.Entities;
 public class Restaurant : Updatable
 {
     public string Name { get; set; }
-    public Location Location { get; set; }
+    public Address Address { get; set; }
+    public List<Product> Products { get; set; }
 }

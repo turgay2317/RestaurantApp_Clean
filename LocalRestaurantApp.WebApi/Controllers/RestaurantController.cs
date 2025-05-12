@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using MediatR;
 using LocalRestaurantApp.Application.Features.RestaurantFeatures.Commands.CreateRestaurant;
 using LocalRestaurantApp.WebApi.Abstraction;
+using MediatR;
 
 namespace LocalRestaurantApp.WebApi.Controllers;
 
